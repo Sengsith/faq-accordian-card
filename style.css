@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  /* Custom Properties */
+  --clr-primary-verydarkblue: hsl(238, 29%, 16%);
+  --clr-primary-softred: hsl(14, 88%, 65%);
+  --clr-gradient-softviolet: hsl(273, 75%, 66%);
+  --clr-gradient-softblue: hsl(240, 73%, 65%);
+  --clr-neutral-darkgrayblue: hsl(237, 12%, 33%);
+  --clr-neutral-grayblue: hsl(240, 6%, 50%);
+  --clr-divider-lightgrayblue: hsl(240, 5%, 91%);
+
+  --fs-header: 2rem;
+  --fs-body: .75rem;
+
+  --ff-body: 'Kumbh Sans', sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/* General Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--clr-primary-verydarkblue);
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  background-image: linear-gradient(180deg, var(--clr-gradient-softviolet), var(--clr-gradient-softblue));
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: white;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  margin: 2rem;
+  width: clamp(18rem, 100vw - 2rem, 20rem);
+  background-image: url("./images/bg-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: center 0;
+  box-shadow: 0 1rem 5rem -1rem;
+}
+
+.box {
+  display: none;
+}
+
+.illust {
+  margin-top: -10.2rem;
+}
+
+h1 {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-header);
+  text-align: center;
+  margin: 1rem;
+}
+
+p {
+  color: var(--clr-neutral-grayblue);
+  display: none;
+}
+
+h2 {
+  font-weight: inherit;
+  font-size: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2:hover {
+  color: var(--clr-primary-softred);
+  cursor: pointer;
+}
+
+h2:focus {
+  font-weight: var(--fw-bold);
+}
+
+h2:focus ~ p {
+  margin-top: .5rem;
+  display: block;
+}
+
+hr.solid {
+  color: var(--clr-divider-lightgrayblue);
+  margin: 1rem 0;
+}
+
+@media (min-width: 900px) {
+
+  main {
+    height: 35rem;
+    width: clamp(25rem, 100vw - 5rem, 60rem);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-image: url("./images/bg-pattern-desktop.svg");
+    background-position: 9800% 75%;
+    overflow: hidden;
+  }
+
+  .box {
+    display: block;
+    position: relative;
+    left: -24.5rem;
+    top: 28rem;
+    margin-top: -191px;
+    margin-left: -184px;
+  }
+
+  .illust {
+    content: url("./images/illustration-woman-online-desktop.svg");
+    margin-left: -7.5rem;
+    margin-top: 3rem;
+  }
+
+  h1 {
+    text-align: left;
+    margin-bottom: 5rem;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 5rem;
+  }
+}
